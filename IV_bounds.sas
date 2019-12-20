@@ -8,7 +8,7 @@
 * Swanson SA, Hernán MA, Miller M, Robins JM, Richardson T. Partial identification of    *
 * the average treatment effect using instrumental variables. JASA 2018; 113(522):933-947 *
 *                                                                                        *
-* Version 01/26/2018. Latest version in github.com/CausalInference and                   *
+* Version 12/20/2019. Latest version in github.com/CausalInference and                   *
 * www.hsph.harvard.edu/causal/software/                                                  *    
 *                                                                                        *
 * Macro inputs:                                                                          *
@@ -417,7 +417,7 @@ UB_globalsens_Y0 = Y0_DE_UB*probDE + Y0_AT_UB_sens*probAT + pyx_z[2,4];
 LB_globalsens_Y1 = Y1_DE_LB*probDE + Y1_NT_LB_sens*probNT + pyx_z[8,4];
 UB_globalsens_Y1 = Y1_DE_UB*probDE + Y1_NT_UB_sens*probNT + pyx_z[8,4];
 ATE_globalsens_LB = pyx_z[8,4] - pyx_z[2,4] + probDE*ATE_DE_LB + probNT*Y1_NT_LB_sens - probAT*Y0_AT_UB_sens;
-ATE_globalsens_UB = pyx_z[8,4] - pyx_z[2,4] + probDE*ATE_DE_LB + probNT*Y1_NT_UB_sens - probAT*Y0_AT_LB_sens;
+ATE_globalsens_UB = pyx_z[8,4] - pyx_z[2,4] + probDE*ATE_DE_UB + probNT*Y1_NT_UB_sens - probAT*Y0_AT_LB_sens;
 RR_globalsens_LB = LB_globalsens_Y1 / UB_globalsens_Y0;
 RR_globalsens_UB = UB_globalsens_Y1 / LB_globalsens_Y0;
 
